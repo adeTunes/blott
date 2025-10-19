@@ -20,7 +20,7 @@ export const NewsCard = (item: MarketNews) => {
       target="_blank"
       key={item.id}
       href={item.url}
-      className="p-4 flex flex-row max-sm:items-center max-sm:gap-4 sm:flex-col gap-2 hover:bg-white/5 transition-colors rounded-lg"
+      className="p-4 flex flex-row max-sm:items-center max-sm:gap-4 sm:flex-col gap-2 hover:bg-[#2A283E] transition-colors rounded-lg"
     >
       <div className="relative sm:w-full sm:h-[179px] size-[100px] rounded overflow-hidden">
         {imageLoading && (
@@ -30,7 +30,7 @@ export const NewsCard = (item: MarketNews) => {
         )}
 
         <Image
-          src={imageError ? images.news1.src : item.image}
+          src={imageError ? images.marketWatchLogo.src : item.image}
           className={`sm:w-full sm:h-[179px] size-[100px] object-cover rounded transition-opacity duration-300 ${
             imageLoading ? "opacity-0" : "opacity-100"
           }`}
@@ -51,9 +51,6 @@ export const NewsCard = (item: MarketNews) => {
           <p>{formatDate(item.datetime)}</p>
         </div>
         <h2 className="text-xl font-medium line-clamp-3">{item.headline}</h2>
-        {item.summary && (
-          <p className="text-sm text-white/60 line-clamp-2">{item.summary}</p>
-        )}
       </div>
     </a>
   );
